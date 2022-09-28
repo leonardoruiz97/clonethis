@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace RESTAPI_CORE.Datos
 {
-    public class DatosSales 
+    public class DatosSales
     {
         public async Task<List<enSales.responseSummary>> Lista(SqlConnection Cn, enSales.parameters parameters)
         {
@@ -23,7 +23,7 @@ namespace RESTAPI_CORE.Datos
                 Connection = Cn
             };
 
-            
+
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", parameters.id);
             cmd.Parameters.AddWithValue("@quotation", parameters.quotation);
@@ -88,8 +88,107 @@ namespace RESTAPI_CORE.Datos
                                 code = DAO.ToString(dr["counterId"]),
                                 name = DAO.ToString(dr["counterName"])
                             }
-                        });                    
+                        });
                     }
+                }
+            }
+            return listaSales;
+        }
+
+        public async Task<List<enSales.salesDetail>> DetailVentas(SqlConnection cn, int idCab)
+        {
+            List<enSales.salesDetail> listaSales = new List<enSales.salesDetail>();
+
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "[checktur].[GetSalesDetail]",
+                CommandType = CommandType.StoredProcedure,
+                Connection = cn
+            };
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCab", idCab);
+            using (SqlDataReader dr = await cmd.ExecuteReaderAsync(CommandBehavior.SingleResult))
+            {
+                if (dr!=null)
+                {
+                    while (await dr.ReadAsync())
+                    {
+                        listaSales.Add(new enSales.salesDetail
+                        {
+                            Estado = DAO.ToString(dr["Estado"]),
+                            Fecha = DAO.ToString(dr["Fecha"]),
+                            FecInicio = DAO.ToString(dr["FecInicio"]),
+                            FechaOut = DAO.ToString(dr["FechaOut"]),
+                            Creador = DAO.ToString(dr["Creado"]),
+                            Responsable = DAO.ToString(dr["Usuario"]),
+                            tipoFile = DAO.ToString(dr["TipoFile"]),
+                            Cliente = DAO.ToString(dr["Cliente"]),
+                            totVta = DAO.ToString(dr["TotVta"]),
+                            Counter = DAO.ToString(dr["Counter"]),
+                            paxGrupo = DAO.ToString(dr["paxgrupo"]),
+                            programa = DAO.ToString(dr["programa"]),
+                            idioma = DAO.ToString(dr["idioma"]),
+                            nroAdulto = DAO.ToString(dr["NroAdulto"]),
+                            nroAdultoE = DAO.ToString(dr["NroAdultoE"]),
+                            nroNino = DAO.ToString(dr["NroNino"]),
+                            nroNinoE = DAO.ToString(dr["NroNinoE"]),
+                            nroPax = DAO.ToString(dr["NroPax"]),
+                            nroLiberados = DAO.ToString(dr["NroLiberados"]),
+                            fecha_cierre = DAO.ToString(dr["fecha_cierre"])
+
+                        });
+                    }
+                        
+                }
+            }
+            return listaSales;
+        }
+        public async Task<List<enSales.salesDetailServices>> DetailServices(SqlConnection cn, int idCab)
+        {
+            List<enSales.salesDetailServices> listaSales = new List<enSales.salesDetailServices>();
+
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "[checktur].[GetSalesServices]",
+                CommandType = CommandType.StoredProcedure,
+                Connection = cn
+            };
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@idCab", idCab);
+            using (SqlDataReader dr = await cmd.ExecuteReaderAsync(CommandBehavior.SingleResult))
+            {
+                if (dr != null)
+                {
+                    while (await dr.ReadAsync())
+                    {
+                        listaSales.Add(new enSales.salesDetailServices
+                        {
+                            Estado = DAO.ToString(dr["Estado"]),
+                            Fecha = DAO.ToString(dr["Fecha"]),
+                            FecInicio = DAO.ToString(dr["FecInicio"]),
+                            FechaOut = DAO.ToString(dr["FechaOut"]),
+                            Creador = DAO.ToString(dr["Creado"]),
+                            Responsable = DAO.ToString(dr["Usuario"]),
+                            tipoFile = DAO.ToString(dr["TipoFile"]),
+                            Cliente = DAO.ToString(dr["Cliente"]),
+                            totVta = DAO.ToString(dr["TotVta"]),
+                            Counter = DAO.ToString(dr["Counter"]),
+                            paxGrupo = DAO.ToString(dr["paxgrupo"]),
+                            programa = DAO.ToString(dr["programa"]),
+                            idioma = DAO.ToString(dr["idioma"]),
+                            nroAdulto = DAO.ToString(dr["NroAdulto"]),
+                            nroAdultoE = DAO.ToString(dr["NroAdultoE"]),
+                            nroNino = DAO.ToString(dr["NroNino"]),
+                            nroNinoE = DAO.ToString(dr["NroNinoE"]),
+                            nroPax = DAO.ToString(dr["NroPax"]),
+                            nroLiberados = DAO.ToString(dr["NroLiberados"]),
+                            fecha_cierre = DAO.ToString(dr["fecha_cierre"])
+
+                        });
+                    }
+
                 }
             }
             return listaSales;

@@ -26,6 +26,60 @@ namespace RESTAPI_CORE.Entities
             public entity user { get; set; }
             public entity counter { get; set; }
         }
+
+        public class salesDetail
+        {
+            public string Estado { get; set; }
+            public string Fecha { get; set; }
+            public string FecInicio { get; set; }
+            public string FechaOut { get; set; }
+            public string Creador { get; set; }
+            public string Responsable { get; set; }
+            public string tipoFile { get; set; }
+            public string Cliente { get; set; }
+            public string totVta { get; set; }
+            public string Counter { get; set; }
+            public string paxGrupo { get; set; }
+            public string programa { get; set; }
+            public string idioma { get; set; }
+            public string nroAdulto { get; set; }
+            public string nroAdultoE { get; set; }
+            public string nroNino { get; set; }
+            public string nroNinoE { get; set; }
+            public string nroPax { get; set; }
+            public string nroLiberados { get; set; }
+            public string fecha_cierre { get; set; }
+
+        }
+
+        public class salesDetailServices
+        {
+            public string Ubigeo { get; set; }
+
+            public string Proveedor { get; set; }
+
+            public string detalle { get; set; }
+
+            public string Dia { get; set; }
+            public string DiaFin { get; set; }
+            public string Estado { get; set; }
+
+            public string NroPax { get; set; }
+            
+            public string noches { get; set; }
+
+            public string Total { get; set; }
+
+            public string Orden { get; set; }
+
+            public string IDCAB { get; set; }
+
+            public string IDDET { get; set; }
+
+            public string CodReserva { get; set; }
+
+            public string Notas { get; set; }
+        }
         public class response : master
         {
             public enClient client { get; set; }
