@@ -165,27 +165,20 @@ namespace RESTAPI_CORE.Datos
                     {
                         listaSales.Add(new enSales.salesDetailServices
                         {
+                            Ubigeo = DAO.ToString(dr["Ubigeo"]),
+                            Proveedor = DAO.ToString(dr["Fecha"]),
+                            detalle = DAO.ToString(dr["detalle"]),
+                            Dia = DAO.ToString(dr["Dia"]),
+                            DiaFin = DAO.ToString(dr["DiaFin"]),
                             Estado = DAO.ToString(dr["Estado"]),
-                            Fecha = DAO.ToString(dr["Fecha"]),
-                            FecInicio = DAO.ToString(dr["FecInicio"]),
-                            FechaOut = DAO.ToString(dr["FechaOut"]),
-                            Creador = DAO.ToString(dr["Creado"]),
-                            Responsable = DAO.ToString(dr["Usuario"]),
-                            tipoFile = DAO.ToString(dr["TipoFile"]),
-                            Cliente = DAO.ToString(dr["Cliente"]),
-                            totVta = DAO.ToString(dr["TotVta"]),
-                            Counter = DAO.ToString(dr["Counter"]),
-                            paxGrupo = DAO.ToString(dr["paxgrupo"]),
-                            programa = DAO.ToString(dr["programa"]),
-                            idioma = DAO.ToString(dr["idioma"]),
-                            nroAdulto = DAO.ToString(dr["NroAdulto"]),
-                            nroAdultoE = DAO.ToString(dr["NroAdultoE"]),
-                            nroNino = DAO.ToString(dr["NroNino"]),
-                            nroNinoE = DAO.ToString(dr["NroNinoE"]),
-                            nroPax = DAO.ToString(dr["NroPax"]),
-                            nroLiberados = DAO.ToString(dr["NroLiberados"]),
-                            fecha_cierre = DAO.ToString(dr["fecha_cierre"])
-
+                            NroPax = DAO.ToString(dr["NroPax"]),
+                            noches = DAO.ToString(dr["noches"]),
+                            Total = DAO.ToString(dr["Total"]),
+                            Orden = DAO.ToString(dr["Orden"]),
+                            IDCAB = DAO.ToString(dr["IDCAB"]),
+                            IDDET = DAO.ToString(dr["IDDET"]),
+                            CodReserva = DAO.ToString(dr["CodReserva"]),
+                            Notas = DAO.ToString(dr["Notas"]),
                         });
                     }
 

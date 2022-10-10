@@ -28,7 +28,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers().AddNewtonsoftJson();
 //========================================= PRIMERO =======================================
 builder.Configuration.AddJsonFile("appsettings.json");
-var secretKey = builder.Configuration.GetSection("settings").GetSection("secretKey").ToString();// "=Codig0Estudiant3=";
+var secretKey = builder.Configuration.GetSection("settings").GetSection("secretKey").ToString();
 var keyBytes = Encoding.UTF8.GetBytes(secretKey);
 
 builder.Services.AddAuthentication(config => {

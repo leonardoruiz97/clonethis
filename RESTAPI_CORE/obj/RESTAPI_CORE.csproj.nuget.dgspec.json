@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\PRUEBASLEO\\clonethis\\RESTAPI_CORE\\RESTAPI_CORE.csproj": {}
+    "D:\\Work\\checkinWork\\PROYECTO_API_JWT\\RESTAPI_CORE\\RESTAPI_CORE.csproj": {}
   },
   "projects": {
-    "F:\\PRUEBASLEO\\clonethis\\RESTAPI_CORE\\RESTAPI_CORE.csproj": {
+    "D:\\Work\\checkinWork\\PROYECTO_API_JWT\\RESTAPI_CORE\\RESTAPI_CORE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\PRUEBASLEO\\clonethis\\RESTAPI_CORE\\RESTAPI_CORE.csproj",
+        "projectUniqueName": "D:\\Work\\checkinWork\\PROYECTO_API_JWT\\RESTAPI_CORE\\RESTAPI_CORE.csproj",
         "projectName": "RESTAPI_CORE",
-        "projectPath": "F:\\PRUEBASLEO\\clonethis\\RESTAPI_CORE\\RESTAPI_CORE.csproj",
-        "packagesPath": "C:\\Users\\gotic\\.nuget\\packages\\",
-        "outputPath": "F:\\PRUEBASLEO\\clonethis\\RESTAPI_CORE\\obj\\",
+        "projectPath": "D:\\Work\\checkinWork\\PROYECTO_API_JWT\\RESTAPI_CORE\\RESTAPI_CORE.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "D:\\Work\\checkinWork\\PROYECTO_API_JWT\\RESTAPI_CORE\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gotic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,8 +75,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -84,7 +87,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

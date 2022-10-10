@@ -34,5 +34,17 @@ namespace RESTAPI_CORE.Logica
             }
             return oSales;
         }
+
+        public async Task<List<enSales.salesDetailServices>> DetailServices(int idCab)
+        {
+            List<enSales.salesDetailServices> oSales = null;
+            using (SqlConnection cn = new SqlConnection(this.stringConexion))
+            {
+                await cn.OpenAsync();
+                DatosSales oDatos = new DatosSales();
+                oSales = await oDatos.DetailServices(cn, idCab);
+            }
+            return oSales;
+        }
     }
 }

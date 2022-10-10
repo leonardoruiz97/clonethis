@@ -50,5 +50,38 @@ namespace RESTAPI_CORE.Controllers
             return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "ERROR", response = respuesta });
 
         }
+        [HttpGet]
+        [Route("DetailServices/{idCab:int}")]
+        public async Task<IActionResult> DetailServices(int idCab)
+        {
+            List<enSales.salesDetailServices> lista = new List<enSales.salesDetailServices>();
+            SalesLogica salesLogica = new SalesLogica();
+            var respuesta = await salesLogica.DetailServices(idCab);
+
+
+            if (respuesta.Count != 0)
+            {
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = respuesta });
+            }
+            return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "ERROR", response = respuesta });
+
+        }
+
+        [HttpGet]
+        [Route("DetailServices/Update/{idCab:int}")]
+        public async Task<IActionResult> DetailServicesUpdate(int idCab)
+        {
+            List<enSales.salesDetailServices> lista = new List<enSales.salesDetailServices>();
+            SalesLogica salesLogica = new SalesLogica();
+            var respuesta = await salesLogica.DetailServices(idCab);
+
+
+            if (respuesta.Count != 0)
+            {
+                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = respuesta });
+            }
+            return StatusCode(StatusCodes.Status500InternalServerError, new { mensaje = "ERROR", response = respuesta });
+
+        }
     }
 }
